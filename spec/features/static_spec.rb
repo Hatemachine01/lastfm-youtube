@@ -5,5 +5,10 @@ describe 'navigate' do
 			visit root_path
 			expect(page.status_code).to eq(200)
 		end
+
+		it "has a form to submit lastfm username" do 
+			visit root_path
+			expect(page).to have_content(/Submit/)
+		end
 	end
 end
