@@ -33,6 +33,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+#ADDED GEMS
+gem 'bootstrap-sass'
+gem 'jquery-rails'
+
+
+
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
