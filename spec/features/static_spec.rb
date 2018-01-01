@@ -10,5 +10,13 @@ describe 'navigate' do
 			visit root_path
 			expect(page).to have_content(/Submit/)
 		end
+
+
+		it 'form cannot be submited if blank' do 
+			visit root_path
+
+			click_on 'Submit'
+			expect(current_path).to eq(root_path)
+		end
 	end
 end
