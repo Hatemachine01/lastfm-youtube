@@ -8,7 +8,8 @@ describe 'navigate' do
 
 		it "has a form to submit lastfm username" do 
 			visit root_path
-			expect(page).to have_content(/Submit/)
+			
+			expect(page).to have_content(/Username/)
 		end
 
 

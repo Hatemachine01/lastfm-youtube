@@ -7,12 +7,17 @@ class StaticController < ApplicationController
   
 
   def api_lookup
-  	p user_params
+  	word = Username.new(user_params)
+  	 if word.valid?
+  	   	'WORKS!'
+  	 else
+  	 	redirect_to root_path
+  	 end
   end
 
 private 
 		 
 	def user_params
-		params.require(:user).permit(:username)
+		params.require(:username).permit(:username)
 	end
 end
