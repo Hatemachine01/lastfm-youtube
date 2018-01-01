@@ -1,14 +1,15 @@
 class StaticController < ApplicationController
 	
   def homepage
+    @username = Username.new
   end
 
   def api_lookup
-  	word = Username.new(user_params)
-  	 if word.valid?
+  	@username = Username.new(user_params)
+  	 if @username.valid?
   	   	'WORKS!'
   	 else
-  	 	redirect_to root_path
+  	 	render :homepage
   	 end
   end
 

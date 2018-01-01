@@ -1,5 +1,12 @@
 <div class="well form-horizontal">	
 	<%= form_for :username, url: lookup_path do |form| %>
+
+	<% if @username.errors.any? %>
+		<% @username.errors.full_messages.each do |error| %>
+			<li><%= error %></li>
+		<% end %>
+	<% end %>
+
 	  
 		  <div class="form-group">
 		  	<%= form.label :username %>
