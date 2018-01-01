@@ -1,8 +1,7 @@
 <h1> Hello, World! </h1>
-<div class="well">
-	<form>
-	  USERNAME:<br>
-	  <input type="text" name="username"><br>
-	  <button type="submit">Submit</button>
-	</form>
+<div class="well">	
+<%= form_for :username, url: lookup_path do |form| %>
+  <%= form.text_field :username %>
+  <%= form.submit  %>
+<% end  %>
 </div>

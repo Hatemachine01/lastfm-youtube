@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 
 root 'application#homepage'
+post '/lookup' , :to => 'application#api_lookup', :as => 'lookup'
 
 
 end

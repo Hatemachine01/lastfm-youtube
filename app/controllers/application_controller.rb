@@ -5,4 +5,13 @@ class ApplicationController < ActionController::Base
   def homepage
   end
 
+  
+  def new 
+
+  end
+
+  def api_lookup
+ 
+  end
+
 end
