@@ -7,7 +7,7 @@ class StaticController < ApplicationController
   def api_lookup
   	@username = Username.new(user_params)
   	 if @username.valid?
-  	   	'WORKS!'
+  	   	#here we call the class method 
   	 else
   	 	render :homepage
   	 end
