@@ -1,10 +1,7 @@
 class StaticController < ApplicationController
-
-
+	
   def homepage
   end
-
-  
 
   def api_lookup
   	word = Username.new(user_params)
