@@ -1,4 +1,4 @@
-<div class="well form-horizontal">	
+<div class="well form">	
 	<%= form_for :username, url: lookup_path do |form| %>
 
 	<% if @username.errors.any? %>
@@ -13,7 +13,7 @@
 		 </div>
 		 
 		  <div class="form-group">
-		  	<%= form.submit 'Submit', class: 'btn btn-primary btn-block' %>
+		  	<%= form.submit 'Submit', class: 'btn btn-primary ' %>
 		  </div>
 	<% end  %>
 </div>
