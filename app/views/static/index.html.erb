@@ -2,6 +2,6 @@
 <%= render 'form' %>
 <% if @songs  %>
 	<% @songs.each do |track| %>
-	<li><%= track %></li>
+	<li><%=link_to track , 'https://www.youtube.com/results?search_query='+"#{track}"  %></li>
 	<% end %> 
 <% end %> 
