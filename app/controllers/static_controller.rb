@@ -8,6 +8,7 @@ class StaticController < ApplicationController
   	@username = Username.new(user_params)
   	 if @username.valid?
   	   	#here we call the class method 
+        @username.api_call(@username.username)
   	 else
   	 	render :homepage
   	 end
