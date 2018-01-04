@@ -1,4 +1,5 @@
 class StaticController < ApplicationController
+  include LastFm
 	
   def homepage
     @username = Username.new
@@ -8,7 +9,7 @@ class StaticController < ApplicationController
   	@username = Username.new(user_params)
   	 if @username.valid?
   	   	#here we call the class method 
-        @songs = @username.api_call(@username.username)
+        @songs = LastFm.api_call(@username.username)
         render :index
   	 else
   	 	  render :homepage
