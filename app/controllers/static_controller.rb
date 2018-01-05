@@ -7,7 +7,7 @@ class StaticController < ApplicationController
 
   def api_lookup
   	@username = Username.new(user_params)
-  	 if @username.valid?
+  	 if  @username.valid?
   	   	#here we call the class method 
         @songs = LastFm.api_call(@username.username)
         render :index
