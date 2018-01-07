@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 #ADDED GEMS
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem  'nokogiri'
 
 
 
