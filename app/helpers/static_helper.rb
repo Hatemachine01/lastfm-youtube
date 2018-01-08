@@ -3,18 +3,17 @@ require "uri"
 require 'nokogiri'
 require 'open-uri'
 
-	def video_id
-		doc = Nokogiri::HTML(open('https://www.youtube.com/results?search_query=DNA.-+Kendrick+Lamar'))
+	def video_id(url)
+		 doc = Nokogiri::HTML(open(url))
 		 links = []
-		 video_link = doc.css('a#video-title.yt-simple-endpoint style-scope ytd-video-renderer' , 'a').each do |fire|
+		 video_link = doc.css('a#video-title' '.yt-simple-endpoint style-scope ytd-video-renderer' , 'a').each do |fire|
 		 links << fire['href']
 		end
-		 regex = /youtu(?:.*\/v\/|.*v\=|\.be\/)([A-Za-z0-9_\-]{11})/
+		 regex = /(?<=[?&]v=)[^&$]+/
 		 links.each do |link|
-		 p link
 		 match = link.match(regex)
 			 if match 
-			 	return match[1]
+			 	return 'https://www.youtube.com/watch?v=' + match[0]
 			 else
 			 	'nothing'
 			end
