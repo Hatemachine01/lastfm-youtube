@@ -3,7 +3,8 @@ require "uri"
 require 'nokogiri'
 require 'open-uri'
 
-	def video_id(url)
+	def video_id(song)
+		 url = 'https://www.youtube.com/results?search_query='+"#{song}"
 		 doc = Nokogiri::HTML(open(url))
 		 links = []
 		 video_link = doc.css('a#video-title' '.yt-simple-endpoint style-scope ytd-video-renderer' , 'a').each do |fire|
@@ -13,7 +14,7 @@ require 'open-uri'
 		 links.each do |link|
 		 match = link.match(regex)
 			 if match 
-			 	return 'https://www.youtube.com/watch?v=' + match[0]
+			 	return  match[0]
 			 else
 			 	'nothing'
 			end

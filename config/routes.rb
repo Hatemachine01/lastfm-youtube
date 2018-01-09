@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 
 root 'static#homepage'
+get '/display', :to => 'static#display', :as => 'display'
 
 
 

@@ -16,6 +16,10 @@ class StaticController < ApplicationController
   	 end
   end
 
+  def display
+    @song = params['format'] 
+  end
+
 private 
 		 
 	def user_params

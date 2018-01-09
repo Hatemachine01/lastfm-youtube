@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem  'nokogiri'
-gem 'pg'
+gem 'sqlite3'
 
 
 
