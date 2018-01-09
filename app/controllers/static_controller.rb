@@ -17,7 +17,8 @@ class StaticController < ApplicationController
   end
 
   def display
-    @song = params['format'] 
+    #needs refactoring
+    @song = params['song'] 
   end
 
 private 
