@@ -2,8 +2,10 @@ module StaticHelper
 require "uri"
 require 'nokogiri'
 require 'open-uri'
+require "i18n"
 
 	def video_id(song)
+		 song = sanitizer(song)
 		 url = 'https://www.youtube.com/results?search_query='+"#{song}"
 		 doc = Nokogiri::HTML(open(url))
 		 links = []
@@ -19,6 +21,12 @@ require 'open-uri'
 			 	'nothing'
 			end
 		end
+	end
+
+	private 
+
+	def sanitizer(song)
+		sanitized =  I18n.transliterate(song)
 	end
 end
 
