@@ -2,6 +2,7 @@
 <%= render 'form' %>
 <% if @songs  %>
 <h1> Your loved Songs </h1>
-<%= render partial: 'song' , collection: @songs %>
+<%= render partial: 'song' , collection: @songs , locals: {username: @username.username} %>
 <% end %> 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+

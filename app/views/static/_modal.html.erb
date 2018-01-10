@@ -10,6 +10,7 @@
   frameborder="0"/>	
   </iframe>
 	<div class="modal-footer">
+    <%= link_to "Previous", previous_path(:username => @username, :previous => @song) , remote:true %> ||  <%= link_to "Next", next_path(:username => @username , :next => @song ) , remote:true %>
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
   </div>
   </div>
