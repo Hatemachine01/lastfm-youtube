@@ -6,6 +6,8 @@ root 'static#homepage'
 get '/display', :to => 'static#display', :as => 'display'
 get '/next', :to => 'static#controls', :as => 'next'
 get '/previous', :to => 'static#controls', :as => 'previous'
+get '/lookup' , :to => 'static#homepage', :as => 'lookup_get'
+
 
 
 
