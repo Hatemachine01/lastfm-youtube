@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
 root 'static#homepage'
 get '/display', :to => 'static#display', :as => 'display'
+get '/lookup' , :to => 'static#homepage', :as => 'lookup_get'
 
 
 
