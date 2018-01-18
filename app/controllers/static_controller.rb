@@ -10,6 +10,7 @@ class StaticController < ApplicationController
   	 if  @username.valid?
   	   	#here we call the class method 
         @songs = LastFm.api_call(@username.username)
+        
         render :index
   	 else
   	 	  render :homepage
@@ -27,3 +28,5 @@ private
 		params.require(:username).permit(:username)
 	end
 end
+
+
