@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180101173106) do
+ActiveRecord::Schema.define(version: 20180119003719) do
+
+  create_table "songs", force: :cascade do |t|
+    t.string "title"
+    t.integer "username_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["username_id"], name: "index_songs_on_username_id"
+  end
 
   create_table "usernames", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
   end
 
 end

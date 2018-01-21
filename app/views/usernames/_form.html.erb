@@ -1,5 +1,5 @@
 <div class="well form">	
-	<%= form_for :username, url: lookup_path do |form| %>
+	<%= form_for @username  do |form| %>
 
 	<% if @username.errors.any? %>
 		<% @username.errors.full_messages.each do |error| %>

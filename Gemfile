@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem  'nokogiri'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
 
 
@@ -47,6 +48,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'factory_girl_rails', '~> 4.5'
 end
 
 group :development do
