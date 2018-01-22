@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 root 'usernames#new'
 resources :usernames , only: [:new, :create]
 
+get '/usernames', :to => 'usernames#new', :as => 'new'
 get '/display', :to => 'usernames#display', :as => 'display'
 get '/shuttle', :to => 'usernames#shuttle', :as => 'shuttle'
 
