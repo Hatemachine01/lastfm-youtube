@@ -23,11 +23,30 @@ body {
 	background-color: black;
 }
 
+
+
+
+.form {
+	
+    display:block;
+    width:50%;
+    margin:0 auto;
+}
+
 h1 {
-	color: white;
+  
+  font-family: 'Passion One';
+  font-size: 50px;
+  color: #2E7BB3;
+  letter-spacing: 1.6rem;
+  top: calc(80% - 200px);
+  text-align: center;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.6);
+  opacity: .68;
+  z-index: 2001;
 }
 
-li {
+a {
 	color: white;
+	font-size: 15px;
 }
-
