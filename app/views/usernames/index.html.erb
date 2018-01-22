@@ -1,7 +1,7 @@
 <h1> Youtube + LastFM Player </h1>
-<%= render 'form' %>
 <% if @songs  %>
 <h1> Loved Songs </h1>
 <%= render partial: 'song' , collection: @songs %>
+<%= paginate @songs %>
 <% end %> 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
