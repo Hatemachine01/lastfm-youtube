@@ -39,6 +39,9 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem  'nokogiri'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'selenium-webdriver'
+gem 'geckodriver-helper'
+
 
 
 
