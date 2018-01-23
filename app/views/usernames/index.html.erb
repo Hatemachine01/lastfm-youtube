@@ -2,6 +2,8 @@
 <% if @songs  %>
 <h1> Loved Songs </h1>
 <%= render partial: 'song' , collection: @songs %>
-<%= paginate @songs %>
+<div id="paginator">
+	<%= paginate @songs , remote: true %>
+</div>	
 <% end %> 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>

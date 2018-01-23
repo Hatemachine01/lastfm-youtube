@@ -1,0 +1,4 @@
+$('#songs').html('<%= escape_javascript(render :partial => "song", :locals => {:song => object(@songs) }) %>');
+$('#paginator').html('<%= escape_javascript(paginate(@songs, remote: true).to_s) %>');
+
+

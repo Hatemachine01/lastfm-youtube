@@ -23,6 +23,13 @@ require "i18n"
 		end
 	end
 
+	def object(songs)
+		p "ENTRO" * 100
+		songs.each do |song|
+		return	song
+		end
+	end
+
 	private 
 
 	def sanitizer(song)
