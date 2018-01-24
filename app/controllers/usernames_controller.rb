@@ -9,7 +9,7 @@ before_action :set_user, only: [:shuttle  ]
    @username = Username.new(user_params)
     if @username.returning_user(@username.username)
        session[:username] =  @username.username
-       redirect_to usernames_path
+       redirect_to usernames_path , remote: true
     elsif @username.save
     	 #here we call the class method 
        @songs =  @username.user_songs(@username.username).page(params[:page]).per(20)
