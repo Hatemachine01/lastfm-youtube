@@ -1,4 +1,9 @@
-// 2. This code loads the IFrame Player API code asynchronously.
+// 2. This code loads the IFrame Player API code asynchronously. 
+$(document).ready( function() {
+  console.log( "ready!" );
+ onYouTubeIframeAPIReady();
+});    
+
       var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
