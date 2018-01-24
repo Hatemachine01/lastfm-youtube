@@ -12,7 +12,7 @@ before_action :set_user, only: [:shuttle  ]
        redirect_to usernames_path
     elsif @username.save
     	 #here we call the class method 
-       @songs =  @username.user_songs(@username.username).page(params[:page]).per(30)
+       @songs =  @username.user_songs(@username.username).page(params[:page]).per(20)
        session[:username] =  @username.username
        redirect_to usernames_path
      else
@@ -22,7 +22,7 @@ before_action :set_user, only: [:shuttle  ]
 
   def index
     @username = Username.find_by_username(session[:username])
-    @songs = @username.returning_user(@username.username).page(params[:page]).per(30)
+    @songs = @username.returning_user(@username.username).page(params[:page]).per(20)
   end
 
 

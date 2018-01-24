@@ -9,6 +9,7 @@
   src="https://www.youtube.com/embed/<%= video_id(@song)%>?autoplay=1"
   frameborder="0"/>	
   </iframe>
+  <div id="player-wrapper"></div>
 	<div class="modal-footer">
     <%= link_to "Shuffle!", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-success" %> |
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
