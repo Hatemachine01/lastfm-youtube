@@ -1,14 +1,26 @@
 // 2. This code loads the IFrame Player API code asynchronously. 
 $(document).ready( function() {
-  console.log( "ready!" );
- onYouTubeIframeAPIReady();
+ loadPlayer();
 });    
 
-      var tag = document.createElement('script');
+      function loadPlayer() { 
+  if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    window.onYouTubePlayerAPIReady = function() {
+      onYouTubePlayer();
+    };
+
+  } else {
+
+    onYouTubePlayerAPIReady();
+
+  }
+}
 
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
