@@ -5,10 +5,10 @@
     <h4 class="modal-title" id="myModalLabel"></h4>
   		</div>
     <div class="modal-body">
-	<iframe id="ytplayer" type="text/html" width="540" height="360"
-  src="https://www.youtube.com/embed/<%= video_id(@song)%>?autoplay=1"
-  frameborder="0"/>	
-  </iframe>
+  <script type="text/javascript">
+     onYouTubeIframeAPIReady('<%= video_id(@song)%>');
+</script>
+<div id="player"></div>
   <div id="player-wrapper"></div>
 	<div class="modal-footer">
     <%= link_to "Shuffle!", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-success" %> |
