@@ -1,18 +1,22 @@
 // 2. This code loads the IFrame Player API code asynchronously.
       
-      $(document).ready( function(id) {
-  loadPlayer();
+      $(document).ready( function(id, user_id) {
+
+  loadPlayer(id, user_id);
 });
 
 
-    function loadPlayer(id) { 
-      console.log(id)
+    function loadPlayer(id, user_id) { 
+    
+       UserId = user_id
+
   if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
 
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
 
     window.onYouTubePlayerAPIReady = function(id) {
       onYouTubePlayer(id);
@@ -36,6 +40,7 @@
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
+
           }
         });
       }
@@ -51,10 +56,18 @@
       var done = false;
        function onPlayerStateChange(event) {        
             if(event.data === 0) {          
-                alert('Continous Playing + Next and Previous functions  coming soon!');
+                   jQuery.ajax({
+                    url: "/shuttle", 
+                    type: "GET",
+                    data: {username :UserId}
+                  });
             }
         }
 
       function stopVideo() {
         player.stopVideo();
       }
+
+
+
+ 

@@ -6,12 +6,12 @@
   		</div>
     <div class="modal-body">
   <script type="text/javascript">
-     loadPlayer('<%= video_id(@song)%>');
+     loadPlayer('<%= video_id(@song)%>', '<%= @user.id %>');
 </script>
 <div id="player"></div>
   <div id="player-wrapper"></div>
 	<div class="modal-footer">
-    <%= link_to "Shuffle!", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-primary" %> |
+    <%= link_to "Next Random Song!", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-primary" %> |
     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
   </div>
   </div>

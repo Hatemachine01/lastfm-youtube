@@ -35,6 +35,7 @@ before_action :set_user, only: [:shuttle  ]
 
   def shuttle
     #needs refactoring  
+    p 'HERE' * 100
     user_songs = Song.where("username_id = ?", @user.id ).to_a 
     user_songs.sample(1).each do |track|
       @song = track.title
