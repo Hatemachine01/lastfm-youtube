@@ -8,7 +8,6 @@ before_action :set_user, only: [:shuttle  ]
   def create
   #needs refactoring
    @username = Username.new(user_params)
-   if @username.username_valid?(@username.username)
       if @username.returning_user(@username.username)
          session[:username] =  @username.username
          redirect_to usernames_path , remote: true
@@ -20,10 +19,8 @@ before_action :set_user, only: [:shuttle  ]
        else
       	 render :new
        end
-    else
-    redirect_to '/'
-    end
   end
+
 
   def index
     @username = Username.find_by_username(session[:username])

@@ -5,15 +5,22 @@ has_many :songs
 
 #validations
 validates :username,  presence: true
-validates_length_of :username, :minimum => 1, :maximum => 15
+validates_length_of :username, :minimum => 3, :maximum => 15
 validates_uniqueness_of :username
+validate :lastfm_username_exists
+
+
+	def lastfm_username_exists
+		if LastFm.is_username_valid?(username) != true
+			 errors.add(:username, "Username does not exist")
+		end
+	end
+
+
 
  #callbacks
 
- 
-
-
-	def returning_user(username)
+ 	def returning_user(username)
 	 	if user = Username.find_by_username(username)
 	 		@songs = user.songs
 	 	else
@@ -31,9 +38,6 @@ validates_uniqueness_of :username
 	    @songs = user.songs
 	 end
 
-	def username_valid?(username)
-	 LastFm.is_username_valid?(username)
-	end
 end
 
 
