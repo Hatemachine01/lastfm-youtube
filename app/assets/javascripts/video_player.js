@@ -39,7 +39,8 @@
           videoId: id,
           events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+            'onStateChange': onPlayerStateChange,
+            'onError': onError
 
           }
         });
@@ -55,22 +56,25 @@
       //    the player should play for six seconds and then stop.
       var done = false;
        function onPlayerStateChange(event) {        
-            if(event.data === 0) {          
-                   jQuery.ajax({
-                    url: "/shuttle", 
-                    type: "GET",
-                    data: {username :UserId}
-                  });
-            if(event.data === -1) {
-              jQuery.ajax({
-                    url: "/shuttle", 
-                    type: "GET",
-                    data: {username :UserId}
-                  });
-                }       
-            }
-        }
+              if(event.data === 0) {          
+                  jQuery.ajax({
+                   url: "/shuttle", 
+                   type: "GET",
+                   data: {username :UserId}
+                 }); 
+              }
 
+            }  
+
+         function onError(event) {
+          jQuery.ajax({
+                   url: "/shuttle", 
+                   type: "GET",
+                   data: {username :UserId}
+                 }); 
+         }        
+            
       function stopVideo() {
         player.stopVideo();
       }
+  
