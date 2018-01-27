@@ -8,30 +8,32 @@ validates :username,  presence: true
 validates_length_of :username, :minimum => 1, :maximum => 15
 validates_uniqueness_of :username
 
+ #callbacks
+
  
 
 
- def returning_user(username)
- 	if user = Username.find_by_username(username)
- 		@songs = user.songs
- 	else
- 		false 
- 	end
- end
+	def returning_user(username)
+	 	if user = Username.find_by_username(username)
+	 		@songs = user.songs
+	 	else
+	 		false 
+	 	end
+	 end
 
 
-def user_songs(username)
- 	  user = Username.find_by_username(username)
- 	  songs = LastFm.api_call(user.username)
- 	  songs.each do |song|
- 		Song.create(title: song, username_id: user.id)
- 	  end
-    @songs = user.songs
- end
+	def user_songs(username)
+	 	  user = Username.find_by_username(username)
+	 	  songs = LastFm.api_call(user.username)
+	 	  songs.each do |song|
+	 		Song.create(title: song, username_id: user.id)
+	 	  end
+	    @songs = user.songs
+	 end
+
+	def username_valid?(username)
+	 LastFm.is_username_valid?(username)
+	end
 end
-
-
-
-
 
 

@@ -6,18 +6,23 @@ before_action :set_user, only: [:shuttle  ]
   end
 
   def create
+  #needs refactoring
    @username = Username.new(user_params)
-    if @username.returning_user(@username.username)
-       session[:username] =  @username.username
-       redirect_to usernames_path , remote: true
-    elsif @username.save
-    	 #here we call the class method 
-       @songs =  @username.user_songs(@username.username).page(params[:page]).per(20)
-       session[:username] =  @username.username
-       redirect_to usernames_path
-     else
-    	 render :new
-     end
+   if @username.username_valid?(@username.username)
+      if @username.returning_user(@username.username)
+         session[:username] =  @username.username
+         redirect_to usernames_path , remote: true
+      elsif @username.save
+      	 #here we call the class method 
+         @songs =  @username.user_songs(@username.username).page(params[:page]).per(20)
+         session[:username] =  @username.username
+         redirect_to usernames_path
+       else
+      	 render :new
+       end
+    else
+    redirect_to '/'
+    end
   end
 
   def index
@@ -35,7 +40,6 @@ before_action :set_user, only: [:shuttle  ]
 
   def shuttle
     #needs refactoring  
-    p 'HERE' * 100
     user_songs = Song.where("username_id = ?", @user.id ).to_a 
     user_songs.sample(1).each do |track|
       @song = track.title
