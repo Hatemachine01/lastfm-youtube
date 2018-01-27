@@ -7,8 +7,8 @@
 
 
     function loadPlayer(id, user_id) { 
-    
-       UserId = user_id
+             
+        UserId = user_id
 
   if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
 
