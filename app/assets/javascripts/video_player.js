@@ -61,6 +61,13 @@
                     type: "GET",
                     data: {username :UserId}
                   });
+            if(event.data === -1) {
+              jQuery.ajax({
+                    url: "/shuttle", 
+                    type: "GET",
+                    data: {username :UserId}
+                  });
+                }       
             }
         }
 
