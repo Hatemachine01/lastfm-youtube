@@ -2,7 +2,7 @@
 	<%= form_for @username  do |form| %>
 	<% if @username.errors.any? %>
 		<% @username.errors.full_messages.each do |error| %>
-			<li><%= error %></li>
+			<%= js add_gritter(error, title: "LastFm-Youtube Notification", sticky: false) %>
 		<% end %>
 	<% end %>
 
