@@ -19,7 +19,6 @@ validate :lastfm_username_exists
 
 
 
- #callbacks
 
  	def returning_user(username)
 	 	if user = Username.find_by_username(username)

@@ -1,6 +1,7 @@
 module LastFm
 require 'json'
 require 'open-uri'
+	
 	def self.api_call(username)
 	    api_key = ENV['LASTFM_API']
 	    url = "http://ws.audioscrobbler.com/2.0/?method=user.getlovedtracks&user=#{username}&api_key=#{api_key}&limit=50&format=json"
@@ -16,7 +17,6 @@ require 'open-uri'
 
 
 	def self.is_username_valid?(username)
-		p 'here' * 20
 		api_key = ENV['LASTFM_API']
 	    url = "http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=#{username}&api_key=#{api_key}&format=json"
 		open(url) do |f|

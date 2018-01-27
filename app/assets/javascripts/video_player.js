@@ -67,7 +67,3 @@
       function stopVideo() {
         player.stopVideo();
       }
-
-
-
- 
