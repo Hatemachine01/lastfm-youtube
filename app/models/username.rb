@@ -11,8 +11,9 @@ validate :lastfm_username_exists
 
 
 	def lastfm_username_exists
+		return unless errors.blank?
 		if LastFm.is_username_valid?(username) != true
-			 errors.add(:username, "Username does not exist")
+			 errors.add(:username, "does not exist")
 		end
 	end
 
