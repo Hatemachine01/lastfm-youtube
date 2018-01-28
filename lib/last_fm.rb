@@ -17,13 +17,16 @@ require 'open-uri'
 
 
 	def self.is_username_valid?(username)
+		p 'ENTRO' * 100
 		api_key = ENV['LASTFM_API']
 	    url = "http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=#{username}&api_key=#{api_key}&format=json"
 		open(url) do |f|
  	  		json_string = f.read
- 	  		parsed_json = JSON.parse(json_string)  
+ 	  		p parsed_json = JSON.parse(json_string)  
  	  		if parsed_json['error'] == 6
- 	  		 return false		
+ 	  		 return false
+ 	  		else
+ 	  		 return  true 		
 			end
 		end
 	end
