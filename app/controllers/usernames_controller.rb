@@ -38,8 +38,10 @@ before_action :set_user, only: [:shuttle  ]
   def shuttle
     #needs refactoring  
     user_songs = Song.where("username_id = ?", @user.id ).to_a 
+    previous_songs = []  
     user_songs.sample(1).each do |track|
-      @song = track.title
+      previous_songs << @song = track.title
+      return user_songs - previous_songs
     end
   end
 
@@ -53,5 +55,6 @@ private
 		params.require(:username).permit(:username)
 	end
 end
+
 
 
