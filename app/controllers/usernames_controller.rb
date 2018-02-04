@@ -1,6 +1,7 @@
 class UsernamesController < ApplicationController
 before_action :set_user, only: [:shuttle  ]
-	
+ $previous_songs = []
+  
   def new
     @username = Username.new
   end
@@ -37,11 +38,17 @@ before_action :set_user, only: [:shuttle  ]
 
   def shuttle
     #needs refactoring  
-    user_songs = Song.where("username_id = ?", @user.id ).to_a 
-    previous_songs = []  
+    user_songs = Song.where("username_id = ?", @user.id ).to_a  
     user_songs.sample(1).each do |track|
-      previous_songs << @song = track.title
-      return user_songs - previous_songs
+      if $previous_songs.length < 0
+        previous_songs << track.title
+        return @song = track.title
+      else   
+        repetition_free = user_songs - $previous_songs
+        repetition_free.sample(1).each do |new_song|
+          return @song = new_song.title
+        end
+      end
     end
   end
 
