@@ -47,6 +47,9 @@ before_action :set_user, only: [:shuttle  ]
         repetition_free = user_songs - $previous_songs
         repetition_free.sample(1).each do |new_song|
           $previous_songs << new_song
+          if $previous_songs.length == 30
+             $previous_songs = []
+          end
           return @song = new_song.title
         end
       end
