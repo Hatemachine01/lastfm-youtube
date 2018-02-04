@@ -41,11 +41,12 @@ before_action :set_user, only: [:shuttle  ]
     user_songs = Song.where("username_id = ?", @user.id ).to_a  
     user_songs.sample(1).each do |track|
       if $previous_songs.length < 0
-        previous_songs << track
+        $previous_songs << track
         return @song = track.title
       else   
         repetition_free = user_songs - $previous_songs
         repetition_free.sample(1).each do |new_song|
+          $previous_songs << new_song
           return @song = new_song.title
         end
       end
