@@ -1,4 +1,4 @@
 # README
 
-Web App to play custom Youtube playlists based on one's lastfm's loved tracks.
+Web App to play Youtube videos of your lastfm's favorited tracks. Look up my username ACDCfuckinrocks and learn about my music taste.
 
