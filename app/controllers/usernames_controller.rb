@@ -13,7 +13,7 @@ before_action :set_user, only: [:shuttle  ]
          session[:username] =  @username.username
          redirect_to usernames_path , remote: true
       elsif @username.save
-      	 #here we call the class method 
+      	 #here we call the instance method 
          @songs =  @username.user_songs(@username.username).page(params[:page]).per(20)
          session[:username] =  @username.username
          redirect_to usernames_path
