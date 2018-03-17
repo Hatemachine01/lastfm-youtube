@@ -34,8 +34,8 @@
       var player;
       function onYouTubePlayer(id) {
         player = new YT.Player('player', {
-          height: '200',
-          width: '300',
+          height: '300',
+          width: '400',
           videoId: id,
           events: {
             'onReady': onPlayerReady,
