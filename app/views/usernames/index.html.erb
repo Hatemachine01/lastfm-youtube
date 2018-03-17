@@ -7,6 +7,9 @@
      		<%= image_tag("music.png", :class => "img") %>
      	</div>	
 		<div class="container" id="songs">
+			<% content_for :title do %>
+	  	<title> <%= @songs.first.title %> </title>
+	<% end %>
 		<%= render partial: 'song' , collection: @songs %>
 		</div>
 		<div id="paginator">

@@ -1,12 +1,12 @@
 // 2. This code loads the IFrame Player API code asynchronously.
       
-      $(document).ready( function(id, user_id) {
+      $(document).ready( function(id, user_id, song) {
 
-  loadPlayer(id, user_id);
+  loadPlayer(id, user_id ,song);
 });
 
 
-    function loadPlayer(id, user_id) { 
+    function loadPlayer(id, user_id, song) { 
              
         UserId = user_id
 
@@ -25,9 +25,16 @@
   } else {
 
     onYouTubePlayer(id);
+    PageTitle(song);
 
   }
 }
+
+
+function PageTitle(song) {
+
+  document.title = song
+};
 
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
