@@ -42,6 +42,7 @@ gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'selenium-webdriver'
 gem 'geckodriver-helper'
 gem "gritter", "1.2.0"
+gem 'social-share-button'
 
 
 

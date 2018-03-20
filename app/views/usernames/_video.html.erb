@@ -3,6 +3,8 @@
      loadPlayer('<%= video_id(@song)%>', '<%= @user.id %>' , '<%= @song %>' );
       </script>
 </div> 	
-    <%= link_to "Next!", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-primary" %>   
+    <%= link_to "Next!", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-primary" %> 
+
+<%= social_share_button_tag(@song, :allow_sites => %w(facebook)) %>  
   </div>
 </div>
