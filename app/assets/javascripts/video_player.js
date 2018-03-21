@@ -7,10 +7,10 @@
 
 
     function loadPlayer(id, user_id, song) { 
-         console.log(id)    
+             
         UserId = user_id
 
-  if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined' ) {
+  if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
 
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
