@@ -82,6 +82,8 @@ GEM
       factory_girl (~> 4.9.0)
       railties (>= 3.0.0)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.3)
+      railties (>= 3.2, < 5.2)
     geckodriver-helper (0.0.4)
       archive-zip (~> 0.7.0)
     globalid (0.4.1)
@@ -243,6 +245,7 @@ DEPENDENCIES
   database_cleaner
   dotenv-rails
   factory_girl_rails (~> 4.5)
+  font-awesome-rails
   geckodriver-helper
   gritter (= 1.2.0)
   jbuilder (~> 2.5)
