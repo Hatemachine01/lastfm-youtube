@@ -22,7 +22,7 @@
       onYouTubePlayer(id);
     };
 
-  } if (jQuery.isReady) {
+  } else {
     
     onYouTubePlayer(id);
     PageTitle(song);
