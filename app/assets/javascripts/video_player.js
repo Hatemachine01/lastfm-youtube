@@ -22,11 +22,10 @@
       onYouTubePlayer(id);
     };
 
-  } else {
-
+  } if (jQuery.isReady) {
+    
     onYouTubePlayer(id);
     PageTitle(song);
-
   }
 }
 
