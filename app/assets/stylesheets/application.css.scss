@@ -74,6 +74,18 @@ a {
     padding: 0;
 }
 
+
+.shuffle {
+  
+    display: block;
+    margin-top: 10px;
+    margin-left: 145px;
+    width: 100px;
+}
+
+
+
+
 $size: 24px;
 
 .social-share-button {
@@ -81,5 +93,9 @@ $size: 24px;
     background-size: $size $size;
     height: $size;
     width: $size;
+    float: right;
+    margin-top: -305px;
+    margin-right: 115px;
+
   }
 }

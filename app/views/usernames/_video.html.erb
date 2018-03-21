@@ -3,7 +3,7 @@
      loadPlayer('<%= video_id(@song)%>', '<%= @user.id %>' , '<%= @song %>' );
       </script>
 </div> 	
-    <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-default" %> 
+    <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-default shuffle" %> 
 
 	 <%= social_share_button_tag(@song,  :url => "http://www.youtube.com/embed/" + video_id(@song) , desc:  @song) %>
   </div>
