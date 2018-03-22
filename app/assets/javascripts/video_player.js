@@ -6,31 +6,31 @@
 // });
 
 
+setTimeout(loadPlayer, 3000);
+
+  function loadPlayer(id, user_id, song) { 
+               
+    UserId = user_id
+
+    if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
+
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
+      window.onYouTubePlayerAPIReady = function(id) {
+        onYouTubePlayer(id);
+        
+      };
 
-    function loadPlayer(id, user_id, song) { 
-             
-        UserId = user_id
-
-  if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
-
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-
-    window.onYouTubePlayerAPIReady = function(id) {
+    } else {
+      
       onYouTubePlayer(id);
-    };
-
-  } else {
-    
-    onYouTubePlayer(id);
-    PageTitle(song);
+      PageTitle(song);
+    }
   }
-}
 
 
 function PageTitle(song) {
