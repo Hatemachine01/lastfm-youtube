@@ -6,7 +6,7 @@
 // });
 
 
-setTimeout(loadPlayer, 1000);
+setTimeout(loadPlayer, 5000);
 
   function loadPlayer(id, user_id, song) { 
                
@@ -20,6 +20,7 @@ setTimeout(loadPlayer, 1000);
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
+      setTimeout(onYouTubePlayer, 3000);
       window.onYouTubePlayerAPIReady = function(id) {
         onYouTubePlayer(id);
         
