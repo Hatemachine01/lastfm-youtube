@@ -1,7 +1,7 @@
 <div id="player">
     <script type="text/javascript">
      loadPlayer('<%= video_id(@song)%>', '<%= @user.id %>' , '<%= @song %>' );
-      </script>
+     </script>
 </div> 	
     <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-default shuffle" %> 
 

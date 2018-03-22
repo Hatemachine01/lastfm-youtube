@@ -1,9 +1,9 @@
 // 2. This code loads the IFrame Player API code asynchronously.
       
-      $(document).ready( function(id, user_id, song) {
+//       $(document).ready( function(id, user_id, song) {
 
-  loadPlayer(id, user_id ,song);
-});
+//   loadPlayer(id, user_id ,song);
+// });
 
 
 
