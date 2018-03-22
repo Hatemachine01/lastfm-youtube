@@ -6,7 +6,7 @@
 // });
 
 
-setTimeout(loadPlayer, 3000);
+setTimeout(loadPlayer, 1000);
 
   function loadPlayer(id, user_id, song) { 
                
