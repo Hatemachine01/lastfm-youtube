@@ -1,12 +1,6 @@
 // 2. This code loads the IFrame Player API code asynchronously.
       
-//       $(document).ready( function(id, user_id, song) {
-
-//   loadPlayer(id, user_id ,song);
-// });
-
-
-setTimeout(loadPlayer, 3000);
+  setTimeout(loadPlayer, 3000);
 
   function loadPlayer(id, user_id, song) { 
                
@@ -20,15 +14,15 @@ setTimeout(loadPlayer, 3000);
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
-      setTimeout(onYouTubePlayer, 3000);
+  
+     
       window.onYouTubePlayerAPIReady = function(id) {
-        onYouTubePlayer(id);
-        
+        setTimeout(onYouTubePlayer(id), 3000);
       };
 
     } else {
       
-      onYouTubePlayer(id);
+     setTimeout(onYouTubePlayer(id), 3000);
       PageTitle(song);
     }
   }
