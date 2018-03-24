@@ -1,54 +1,7 @@
 // 2. This code loads the IFrame Player API code asynchronously.
       
-  setTimeout(loadPlayer, 3000);
-
-  function loadPlayer(id, user_id, song) { 
-               
-    UserId = user_id
-
-    if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
-
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-
-  
-     
-      window.onYouTubePlayerAPIReady = function(id) {
-        setTimeout(onYouTubePlayer(id), 3000);
-      };
-
-    } else {
-      
-     setTimeout(onYouTubePlayer(id), 3000);
-      PageTitle(song);
-    }
-  }
-
-
-function PageTitle(song) {
-
-  document.title = song
-};
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubePlayer(id) {
-        player = new YT.Player('player', {
-          height: '300',
-          width: '400',
-          videoId: id,
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange,
-            'onError': onError
-
-          }
-        });
-      }
+ 
+ 
 
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
@@ -81,4 +34,7 @@ function PageTitle(song) {
       function stopVideo() {
         player.stopVideo();
       }
+
+
+
   
