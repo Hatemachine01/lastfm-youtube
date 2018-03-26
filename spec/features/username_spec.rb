@@ -20,6 +20,16 @@ describe 'navigate' do
     		fill_in 'username[username]', with: "acdcfuckinrocks"
     		
     		expect{ click_on 'Submit'}.to change(Song, :count).by(0)
+   		end 
+
+   		it "it should have a link to perform another username lookup" do 
+    		visit root_path
+    		fill_in 'username[username]', with: "acdcfuckinrocks"
+    		click_on 'Submit'
+    		
+    		click_link("Another search")
+    		
+    		expect(page.status_code).to eq(200)
    		end     
 	end
 end

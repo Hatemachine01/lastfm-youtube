@@ -37,6 +37,7 @@ function PageTitle(song) {
           height: '300',
           width: '400',
           videoId: '<%= video_id(@song)%>',
+          playerVars: { 'autoplay': 1, 'controls': 1 },
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange,
@@ -50,6 +51,9 @@ function PageTitle(song) {
      </script>
 </div> 	
     <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-default shuffle" %> 
+    
+      <%= link_to "Switch Username", new_username_path , :class => "btn btn-default back-button", :id => 'Another search' %>    
+   
 
 	 <%= social_share_button_tag(@song,  :url => "http://www.youtube.com/embed/" + video_id(@song) , desc:  @song) %>
   </div>
