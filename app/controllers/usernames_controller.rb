@@ -1,5 +1,5 @@
 class UsernamesController < ApplicationController
-before_action :set_user, only: [:shuttle  ]
+before_action :set_user, only: [:shuttle ]
  $previous_songs = []
   
   def new
@@ -9,21 +9,23 @@ before_action :set_user, only: [:shuttle  ]
   def create
   #needs refactoring
    @username = Username.new(user_params)
-      if @username.returning_user(@username.username)
+      if @username.returning_user(@username.username) #checks if username already exists and gets songs locally if it exists
          session[:username] =  @username.username
          redirect_to usernames_path , remote: true
       elsif @username.save
-      	 #here we call the instance method 
+      	 #if username does no exists it creates it and calls the user songs method to rertieve songs using lastfms API
          @songs =  @username.user_songs(@username.username).page(params[:page]).per(20)
          session[:username] =  @username.username
          redirect_to usernames_path
        else
+        #if username failed any validations it render the form again
       	 render :new
        end
   end
 
 
   def index
+    #once user reaches index page they must have already passed all validations and their songs have already been rertieved or saved. They are consired a returning user and their songs are rertieved from local DB using the returning_user instance method
     @username = Username.find_by_username(session[:username])
     @songs = @username.returning_user(@username.username).page(params[:page]).per(20)
   end
