@@ -4,10 +4,18 @@ has_many :songs
 
 
 #validations
+before_validation :check_params
 validates :username,  presence: true
 validates_length_of :username, :minimum => 3, :maximum => 15
 validates_uniqueness_of :username
 validate :lastfm_username_exists
+
+
+
+	def check_params   
+   		self.username.downcase!     
+	end
+
 
 
 	def lastfm_username_exists
@@ -34,14 +42,16 @@ validate :lastfm_username_exists
 
 	def user_songs(username)
 		#makes call to lastfm and saves users songs on db
-	 	  user = Username.find_by_username(username)
-	 	  songs = LastFm.api_call(user.username)
-	 	  songs.each do |song|
+	 	user = Username.find_by_username(username)
+	 	songs = LastFm.api_call(user.username)
+	 	songs.each do |song|
 	 		Song.create(title: song, username_id: user.id)
-	 	  end
+	 	end
 	    @songs = user.songs
 	 end
 
 end
+
+
 
 
