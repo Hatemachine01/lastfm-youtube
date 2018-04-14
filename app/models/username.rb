@@ -4,7 +4,7 @@ has_many :songs
 
 
 #validations
-before_validation :check_params
+before_create :check_params
 validates :username,  presence: true
 validates_length_of :username, :minimum => 3, :maximum => 15
 validates_uniqueness_of :username
