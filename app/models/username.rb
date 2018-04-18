@@ -37,7 +37,7 @@ validate :lastfm_username_exists
 	 	else
 	 		false 
 	 	end
-	 end
+	end
 
 
 	def user_songs(username)
@@ -48,7 +48,7 @@ validate :lastfm_username_exists
 	 		Song.create(title: song, username_id: user.id)
 	 	end
 	    @songs = user.songs
-	 end
+	end
 
 end
 

@@ -58,15 +58,15 @@ before_action :set_user, only: [:shuttle ]
     end
   end
 
-private 
+  private 
 		 
   def set_user
    @user = Username.find_by_id(params[:username])
   end
 
-	def user_params
-		params.require(:username).permit(:username)
-	end
+  def user_params
+   params.require(:username).permit(:username)
+  end
 end
 
 

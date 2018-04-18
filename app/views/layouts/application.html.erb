@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
     <%= favicon_link_tag 'favicon.ico' %>
     <% if content_for?(:title) %>
       <%= content_for(:title) %>
     <% else %>
       <title> LastFm - Youtube </title>
     <% end %>
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -16,10 +18,11 @@
   </head>
 
   <body>
-   <div class="container">
-    <%= yield %>
-  </div>
-  <%= render 'layouts/footer' %>
-  <%= js add_gritter(flash[:notice], title: "LastFM-Youtube Notification", sticky: false) %>
- </body>
+    <div class="container">
+      <%= yield %>
+    </div>
+    
+    <%= render 'layouts/footer' %>
+    <%= js add_gritter(flash[:notice], title: "LastFM-Youtube Notification", sticky: false) %>
+  </body>
 </html>
