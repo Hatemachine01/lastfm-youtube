@@ -4,7 +4,7 @@ has_many :songs
 
 
 #validations
-before_create :check_params
+#before_create :check_params
 validates :username,  presence: true
 validates_length_of :username, :minimum => 3, :maximum => 15
 validates_uniqueness_of :username
@@ -12,9 +12,9 @@ validate :lastfm_username_exists
 
 
 
-	def check_params   
-   		self.username.downcase!     
-	end
+	# def check_params   
+ 	#   self.username.downcase!     
+	# end
 
 
 
