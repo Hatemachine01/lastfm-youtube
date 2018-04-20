@@ -18,11 +18,12 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class=" page">
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
     
-    <%= render 'layouts/footer' %>
+   
     <%= js add_gritter(flash[:notice], title: "LastFM-Youtube Notification", sticky: false) %>
   </body>
 </html>
