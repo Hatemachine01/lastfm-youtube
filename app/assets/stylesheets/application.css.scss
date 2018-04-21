@@ -66,15 +66,6 @@ a {
 	font-size: 15px;
 }
 
-.youtube-window {
-  
-    float: left;
-    width: 550px;
-    height: 250px;
-    margin-left: 450px;
-    margin-top: -515px;
-    padding-top: 50px;
-}
 
 .title {
   margin-bottom: 60px;
@@ -107,30 +98,19 @@ a {
   padding: 2rem;
 }
 
-#player {
+.video-window {
+    display:block;
+    margin-top: 50px;
+    position: fixed;
+    top: 10%;
+    left: 500px;
   
+}
+
+
+
+
+#player {
     box-shadow: 0px 7px 5px black;
 }
 
-
-
-
-
-
-}
-
-
-
-$size: 24px;
-
-.social-share-button {
-  .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
-    float: right;
-    margin-top: -305px;
-    margin-right: 115px;
-
-  }
-}

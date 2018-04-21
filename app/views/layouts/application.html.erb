@@ -3,11 +3,8 @@
   <head>
     
     <%= favicon_link_tag 'favicon.ico' %>
-    <% if content_for?(:title) %>
-      <%= content_for(:title) %>
-    <% else %>
-      <title> LastFm - Youtube </title>
-    <% end %>
+    <title> LastFm - Youtube </title>
+ 
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +15,7 @@
   </head>
 
   <body>
-    <div class=" page">
+    <div class="container-fluid page">
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>

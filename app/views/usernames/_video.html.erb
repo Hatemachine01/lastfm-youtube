@@ -1,67 +1,67 @@
-<div id="player">
-    <script type="text/javascript">
-     $(document).ready(function() {
-      function loadPlayer(id, user_id, song) { 
-               
-    UserId = user_id
 
-    if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
+  <div id="player">
+      <script type="text/javascript">
+       $(document).ready(function() {
+        function loadPlayer(id, user_id, song) { 
+                 
+      UserId = user_id
 
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  
-     
-      window.onYouTubePlayerAPIReady = function(id) {
-        onYouTubePlayer(id);
-        PageTitle(song);
-      };
+      if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
 
-    } else {
-      
-     onYouTubePlayer(id)
-      PageTitle(song);
-    }
-  }
-
-function PageTitle(song) {
-
-  document.title = song
-};
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubePlayer(id) {
-        player = new YT.Player('player', {
-          height: '300',
-          width: '400',
-          videoId: '<%= video_id(@song)%>',
-          playerVars: { 'autoplay': 1, 'controls': 1 },
-
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange,
-            'onError': onError
-
-          }
-        });
-      }
-  loadPlayer('<%= video_id(@song)%>', '<%= @user.id %>' , '<%= @song %>' );
-});
-     </script>
-</div> 	
-    <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-default shuffle" %> 
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     
-      <%= link_to "Switch Username", new_username_path , :class => "btn btn-default back-button", :id => 'Another search' %> 
+       
+        window.onYouTubePlayerAPIReady = function(id) {
+          onYouTubePlayer(id);
+          PageTitle(song);
+        };
 
-	 <%= social_share_button_tag(@song,  :url => "https://www.youtube.com/embed/" + video_id(@song) , desc:  @song) %>
+      } else {
+        
+       onYouTubePlayer(id)
+        PageTitle(song);
+      }
+    }
 
-  
+  function PageTitle(song) {
+
+    document.title = song
+  };
+
+        // 3. This function creates an <iframe> (and YouTube player)
+        //    after the API code downloads.
+        var player;
+        function onYouTubePlayer(id) {
+          player = new YT.Player('player', {
+            height: '300',
+            width: '400',
+            videoId: '<%= video_id(@song)%>',
+            playerVars: { 'autoplay': 1, 'controls': 1 },
+
+            events: {
+              'onReady': onPlayerReady,
+              'onStateChange': onPlayerStateChange,
+              'onError': onError
+
+            }
+          });
+        }
+    loadPlayer('<%= video_id(@song)%>', '<%= @user.id %>' , '<%= @song %>' );
+  });
+       </script>
+  </div> 	
+
+      <div class="container">
+      <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-default shuffle" %> 
+      
+        <%= link_to "Switch Username", new_username_path , :class => "btn btn-default back-button", :id => 'Another search' %> 
+
+  	 <%= social_share_button_tag(@song,  :url => "https://www.youtube.com/embed/" + video_id(@song) , desc:  @song) %>
 
   </div>
-</div>
 
 
 
