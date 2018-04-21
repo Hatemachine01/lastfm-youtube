@@ -1,25 +1,31 @@
-
-
-     <% if @songs  %>
-     	<div class="title">
-     		<h1> Loved Songs </h1>
-     		
-     	</div>	
-		
-		<div id="songs">
-			<%= render partial: 'song' , collection: @songs %>
+<div class="container-fluid">
+	<div class="row">
+	     
+	     <% if @songs  %>
+	     	<div class="title">
+	     		<h1> Loved Songs </h1>
+	     		
+	     	</div>	
+		<div class="col-ls">	
+			<div id="songs">
+				<%= render partial: 'song' , collection: @songs %>
+			</div>
+			
+			<div id="paginator">
+				<%= paginate @songs , remote: true %>
+			</div>
 		</div>
 		
-		<div id="paginator">
-			<%= paginate @songs , remote: true %>
+		<div class="col-ls">	
+			<div class="video-window">
+			 	<div  id="myVideo"></div>
+			</div>	
 		</div>
 
-		<div class="video-window">
-		 	<div  id="myVideo"></div>
-		</div>	
-   
+   </div>
 
 	<% else %>	
 	
 	<h1> Youtube + LastFM Player </h1>
 	<% end %>
+</div>

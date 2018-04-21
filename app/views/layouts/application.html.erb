@@ -14,13 +14,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
 
-  <body>
-    <div class="container-fluid page">
+  <body class="page">
+  <div class="container">
+    
       <%= yield %>
       <%= render 'layouts/footer' %>
-    </div>
+  </div>
     
-   
+  
+
+    
+
     <%= js add_gritter(flash[:notice], title: "LastFM-Youtube Notification", sticky: false) %>
   </body>
 </html>
