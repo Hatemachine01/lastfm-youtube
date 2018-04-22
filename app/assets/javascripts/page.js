@@ -14,9 +14,8 @@
 
 
 
-$(document).ready(function(){
-	console.log("hi")
-  $('.middle').click(function () {
+  $( document ).on('turbolinks:load', function() {
+    $('.middle').click(function () {
         $('.page').toggleClass('active');
     });
-});
+})
