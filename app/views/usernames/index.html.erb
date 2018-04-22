@@ -1,4 +1,4 @@
-<div class="container-fluid">
+
 	<div class="row">
 	     
 	     <% if @songs  %>
@@ -16,11 +16,20 @@
 			</div>
 		</div>
 		
+		<% if mobile_device? %>
+
+			<div  id="myVideo"></div>
+			
+
+		<% else %>
+
+
 		<div class="col-ls">	
 			<div class="video-window">
 			 	<div  id="myVideo"></div>
 			</div>	
 		</div>
+		<% end %>
 
    </div>
 
@@ -28,4 +37,3 @@
 	
 	<h1> Youtube + LastFM Player </h1>
 	<% end %>
-</div>
