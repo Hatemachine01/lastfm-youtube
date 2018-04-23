@@ -17,5 +17,10 @@
 $( document ).on('turbolinks:load', function() {
     $('.middle').click(function () {
         $('.page').toggleClass('active');
+        $(".light-buld").toggle();
     });
 })
+
+
+
+
