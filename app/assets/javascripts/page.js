@@ -14,7 +14,7 @@
 
 
 
-  $( document ).on('turbolinks:load', function() {
+$( document ).on('turbolinks:load', function() {
     $('.middle').click(function () {
         $('.page').toggleClass('active');
     });
