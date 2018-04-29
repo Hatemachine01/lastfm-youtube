@@ -1,4 +1,5 @@
-<li><%=link_to truncate(song.title) , display_path(:username => @username.username, :song => "#{song.title}") , remote:true %></li>
+<li class="song-list"><i class="fa fa-music" aria-hidden="true"></i><span></span>
+<%=link_to truncate(song.title) , display_path(:username => @username.username, class: 'fa fa-music',  :song => "#{song.title}") , remote:true %></li>
 
 
 
