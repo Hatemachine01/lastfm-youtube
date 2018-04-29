@@ -106,6 +106,7 @@ a {
 }
 
 
+/*
 
 .video-window {
     display:block;
@@ -115,6 +116,8 @@ a {
     left: 500px;
   
 }
+
+*/
 
 .footer {
    
@@ -142,10 +145,7 @@ a {
 
 
 
-.column {
-    float: left;
-    width: 50%;
-}
+
 
 .row:after {
     content: "";
@@ -154,16 +154,26 @@ a {
 }
 
 
+.control-panel {
+  
+
+}
+
+
+
 $size: 24px;
 
 .social-share-button {
+ position: relative;
+ margin-left: 65%;
+
   .ssb-icon {
     background-size: $size $size;
     height: $size;
     width: $size;
-    float: right;
-    margin-top: -50px;
-    
+    margin-top: 10px;
+ 
+      
 
   }
 }
