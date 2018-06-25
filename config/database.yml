@@ -22,6 +22,6 @@ test:
 
 production:
   adapter: postgresql
-  database: lastfm-youtube
+  database: lastfm-youtubegit 
   pool: 5
   timeout: 5000
