@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20180119003719) do
   end
 
   create_table "usernames", force: :cascade do |t|
+    t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username"
   end
 
 end

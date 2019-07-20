@@ -17,6 +17,8 @@ require 'open-uri'
 	end
 
 
+
+
 	def self.is_username_valid?(username)
 		#checks if the username exists on the lastfm database
 		api_key = ENV['LASTFM_API']
