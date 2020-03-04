@@ -136,7 +136,7 @@ GEM
     pg (0.20.0)
     powerpack (0.1.2)
     public_suffix (3.0.2)
-    puma (3.11.4)
+    puma (3.12.4)
     rack (2.0.5)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
@@ -271,7 +271,7 @@ DEPENDENCIES
   newrelic_rpm
   nokogiri
   pg (= 0.20.0)
-  puma (~> 3.7)
+  puma (~> 3.12)
   rails (~> 5.1.4)
   rails_12factor
   rspec-rails
