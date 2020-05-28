@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem  'nokogiri'
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'kaminari', '~> 1.2'
 gem 'selenium-webdriver'
 gem 'geckodriver-helper'
 gem "gritter", "1.2.0"
