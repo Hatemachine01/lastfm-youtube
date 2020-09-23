@@ -21,7 +21,7 @@ require 'open-uri'
 
 	def self.is_username_valid?(username)
 		#checks if the username exists on the lastfm database
-		api_key = "bbe10c673a1a4d3f5aa7095854323245"
+		api_key = ENV['LASTFM_API']
 	    url = "http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=#{username}&api_key=#{api_key}&format=json"
 		open(url) do |f|
  	  		json_string = f.read
