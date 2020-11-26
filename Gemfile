@@ -49,6 +49,7 @@ gem "font-awesome-rails"
 gem 'rubocop', '~> 0.54.0', require: false
 gem 'newrelic_rpm'
 gem 'rspotify'
+gem 'popper_js', '~> 1.14.5'
 
 
 

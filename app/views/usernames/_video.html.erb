@@ -1,4 +1,19 @@
- 
+<script type="text/javascript">
+  
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+        placement : 'top',
+        trigger : 'hover',
+        html : true,
+        content : '<div class="media"><img src="<%= album_img(@song) %>" class="mr-3" alt="Album Cover"><div class="media-body"></div> <%=album_name(@song)%> , Released: <%= album_release_date(@song) %>"</div>'
+    });
+}); 
+
+
+
+</script>
+
+
 
 <div class="embed-responsive embed-responsive-4by3">
   <div class="embed-responsive-item" id="player">
@@ -62,9 +77,19 @@
 </div>
 <div class="control-panel">
  
+   
+  
+   
+
+</div>
+ 
       <a href="<%= spotify_link(@song) %>">Play on Spotify</a> 
       <a href="<%= track_album(@song) %>">Play Album on Spotify</a>
      
+       <button type="button" class="btn btn-primary" data-toggle="popover"> Album info </button>
+    
+
+
       <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-primary shuffle" %> 
       
       <%= link_to "Switch Username", new_username_path , :class => "btn btn-primary back-button", :id => 'Another search' %> 

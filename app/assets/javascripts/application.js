@@ -12,6 +12,7 @@
 //
 
 //= require jquery2
+//= require popper
 //= require bootstrap
 //= require gritter
 //= require rails-ujs

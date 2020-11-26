@@ -28,6 +28,23 @@ require 'rspotify'
 		spotify_link = artists.first.album.uri
 	end
 
+	def album_release_date(song)
+		artists = RSpotify::Track.search("#{song}")
+		spotify_link = artists.first
+		spotify_link = artists.first.album.release_date
+	end
+
+	def album_name(song)
+		artists = RSpotify::Track.search("#{song}")
+		spotify_link = artists.first
+		spotify_link = artists.first.album.name
+	end
+
+	def album_img(song)
+		artists = RSpotify::Track.search("#{song}")
+		spotify_link = artists.first
+	p	spotify_link = artists.first.album.images[1]['url']
+	end
 
 	private 
 
