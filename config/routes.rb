@@ -6,6 +6,7 @@ resources :usernames , only: [:new, :create , :index]
 
 get '/display', :to => 'usernames#display', :as => 'display'
 get '/shuttle', :to => 'usernames#shuttle', :as => 'shuttle'
+get '/auth/spotify/callback', to: 'usernames#spotify'
 
 	
 end

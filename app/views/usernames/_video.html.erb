@@ -1,9 +1,11 @@
+ 
+
 <div class="embed-responsive embed-responsive-4by3">
   <div class="embed-responsive-item" id="player">
           
           <script type="text/javascript">
            $(document).ready(function() {
-            function loadPlayer(id, user_id, song) { 
+            function loadPlayer(id, user_id, song, spotify_link) { 
                      
           UserId = user_id
 
@@ -52,7 +54,7 @@
             }
 
             console.log('<%= video_id(@song)%>')
-        loadPlayer('<%= video_id(@song)%>', '<%= @user.id %>' , '<%= @song %>' );
+        loadPlayer('<%= video_id(@song)%>', '<%= @user.id %>' , '<%= @song %>', '<%= spotify_link(@song) %>' );
       });
         </script>
     
@@ -60,10 +62,12 @@
 </div>
 <div class="control-panel">
  
+      <a href="<%= spotify_link(@song) %>">Play on Spotify</a> 
+      <a href="<%= track_album(@song) %>">Play Album on Spotify</a>
      
-      <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-default shuffle" %> 
+      <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-primary shuffle" %> 
       
-      <%= link_to "Switch Username", new_username_path , :class => "btn btn-default back-button", :id => 'Another search' %> 
+      <%= link_to "Switch Username", new_username_path , :class => "btn btn-primary back-button", :id => 'Another search' %> 
 </div>  	
 
 
