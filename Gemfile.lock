@@ -297,7 +297,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
-  bundler
   capybara
   coffee-rails (~> 4.2)
   database_cleaner
