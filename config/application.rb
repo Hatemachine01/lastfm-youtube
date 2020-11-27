@@ -3,12 +3,10 @@ require_relative 'boot'
 
 require 'rails/all'
 
-
 Bundler.require(*Rails.groups)
-
-Dotenv::Railtie.load
-
-HOSTNAME = ENV['HOSTNAME']
+if ['development', 'test'].include? ENV['RAILS_ENV']
+  Dotenv::Railtie.load
+end
 
 module LastfmYoutube
   class Application < Rails::Application
