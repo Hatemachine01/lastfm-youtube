@@ -77,17 +77,17 @@ $(document).ready(function(){
 </div>
 <div class="control-panel">
  
-   
+<a href="<%= spotify_link(@song) %>">Play on Spotify </a> 
+<a href="<%= track_album(@song) %>">Play Album on Spotify</a>
+
+ <button type="button" class="btn btn-primary" data-toggle="popover"> Album info </button>
+
   
    
 
 </div>
  
-      <a href="<%= spotify_link(@song) %>">Play on Spotify</a> 
-      <a href="<%= track_album(@song) %>">Play Album on Spotify</a>
-     
-       <button type="button" class="btn btn-primary" data-toggle="popover"> Album info </button>
-    
+ 
 
 
       <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-primary shuffle" %> 

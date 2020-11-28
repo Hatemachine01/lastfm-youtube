@@ -49,11 +49,6 @@ validate :lastfm_username_exists
 	 	end
 	    @songs = user.songs
 	end
-
-
-
-
-
 end
 
 
