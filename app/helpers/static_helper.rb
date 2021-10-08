@@ -12,7 +12,7 @@ require 'rspotify'
 		song = sanitizer(song) #sanitizes song title to prevent encoding issues
 		json =  open("http://youtube-scrape.herokuapp.com/api/search?q=""#{song}""&page=1").read
 		data = JSON.parse(json)
-		id = data['results'][1]['video']['id']
+	    id = data['results'][1]['video']['id']
 
 	end
 

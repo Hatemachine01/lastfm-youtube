@@ -37,6 +37,8 @@ $(document).ready(function(){
               PageTitle(song);
             };
 
+
+
           } else {
             
            onYouTubePlayer(id)
@@ -76,22 +78,12 @@ $(document).ready(function(){
   </div>
 </div>
 <div class="control-panel">
- 
-<a href="<%= spotify_link(@song) %>">Play on Spotify </a> 
-<a href="<%= track_album(@song) %>">Play Album on Spotify</a>
-
- <button type="button" class="btn btn-primary" data-toggle="popover"> Album info </button>
-
-  
-   
-
+  <a href="<%= spotify_link(@song) %>">Play on Spotify </a> 
+  <a href="<%= track_album(@song) %>">Play Album on Spotify</a>
+  <button type="button" class="btn btn-primary" data-toggle="popover"> Album info </button>
 </div>
  
  
-
-
-      <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-primary shuffle" %> 
-      
       <%= link_to "Switch Username", new_username_path , :class => "btn btn-primary back-button", :id => 'Another search' %> 
 </div>  	
 

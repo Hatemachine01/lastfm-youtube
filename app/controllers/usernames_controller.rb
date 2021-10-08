@@ -13,7 +13,7 @@ before_action :set_user, only: [:shuttle ]
          session[:username] =  @username.username
          redirect_to usernames_path , remote: true
       elsif @username.save
-      	 #if username does no exists it creates it and calls the user songs method to rertieve songs using lastfms API
+      	 #if username does no exists it creates it and calls the user songs method to retrieve songs using lastfms API
          @songs =  @username.user_songs(@username.username).page(params[:page]).per(20)
          session[:username] =  @username.username
          redirect_to usernames_path
@@ -25,7 +25,7 @@ before_action :set_user, only: [:shuttle ]
 
 
   def index
-    #once user reaches index page they must have already passed all validations and their songs have already been rertieved or saved. They are consired a returning user and their songs are rertieved from local DB using the returning_user instance method
+    #once user reaches index page they must have already passed all validations and their songs have already been retrieved or saved. They are consired a returning user and their songs are rertieved from local DB using the returning_user instance method
     @username = Username.find_by_username(session[:username])
     @songs = @username.returning_user(@username.username).page(params[:page]).per(20)
   end
