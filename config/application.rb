@@ -10,6 +10,7 @@ module LastfmYoutube
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
+    config.assets.initialize_on_precompile = false
     config.autoload_paths << Rails.root.join('lib')
     RSpotify::authenticate(
      ENV["SPOTIFY_KEY_1"], ENV["SPOTIFY_KEY_2"])
