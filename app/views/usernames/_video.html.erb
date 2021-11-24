@@ -56,10 +56,14 @@ $(document).ready(function(){
             var player;
             function onYouTubePlayer(id) {
               player = new YT.Player('player', {
-                height: '400',
+                height: '24px',
                 width: '550',
                 videoId: '<%= video_id(@song)%>',
-                playerVars: { 'autoplay': 1, 'controls': 1 },
+                playerVars: { 'autoplay': 1, 
+                              'controls': 1 , 
+                              'autohide': 1,
+
+                               },
 
                 events: {
                   'onReady': onPlayerReady,
@@ -78,13 +82,13 @@ $(document).ready(function(){
   </div>
 </div>
 <div class="control-panel">
-  <a href="<%= spotify_link(@song) %>">Play on Spotify </a> 
-  <a href="<%= track_album(@song) %>">Play Album on Spotify</a>
+  <a class="btn btn-primary" href="<%= spotify_link(@song) %>">Play on Spotify </a> 
   <button type="button" class="btn btn-primary" data-toggle="popover"> Album info </button>
 </div>
  
  
       <%= link_to "Switch Username", new_username_path , :class => "btn btn-primary back-button", :id => 'Another search' %> 
+      <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-primary shuffle" %> 
 </div>  	
 
 
