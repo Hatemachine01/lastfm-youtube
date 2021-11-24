@@ -35,7 +35,11 @@ $(document).ready(function(){
             window.onYouTubePlayerAPIReady = function(id) {
               onYouTubePlayer(id);
               PageTitle(song);
+
             };
+
+
+
 
 
 
@@ -46,6 +50,77 @@ $(document).ready(function(){
           }
         }
 
+      function initialize(){
+        console.log('inside initialize')
+    // Update the controls on load
+    updateTimerDisplay();
+    updateProgressBar();
+
+
+    // Clear any old interval.
+    clearInterval(time_update_interval);
+
+    // Start interval to update elapsed time display and
+    // the elapsed part of the progress bar every second.
+    time_update_interval = setInterval(function () {
+        updateTimerDisplay();
+        updateProgressBar();
+    }, 1000)
+
+}  
+
+      // This function is called by initialize()
+      function updateTimerDisplay(){
+        console.log('inside timer display')
+          // Update current time text display.
+          $('#current-time').text(formatTime( player.getCurrentTime() ));
+          $('#duration').text(formatTime( player.getDuration() ));
+
+      }
+
+      function formatTime(time){
+        console.log('inside Time II')
+          time = Math.round(time);
+
+          var minutes = Math.floor(time / 60),
+          seconds = time - minutes * 60;
+          console.log(minutes)
+
+          seconds = seconds < 10 ? '0' + seconds : seconds;
+
+          return minutes + ":" + seconds;
+      }
+
+            $('#progress-bar').on('mouseup touchend', function (e) {
+
+          // Calculate the new time for the video.
+          // new time in seconds = total duration in seconds * ( value of range input / 100 )
+          var newTime = player.getDuration() * (e.target.value / 100);
+
+          // Skip video to new time.
+          player.seekTo(newTime);
+
+      });
+
+            // This function is called by initialize()
+      function updateProgressBar(){
+          // Update the value of our progress bar accordingly.
+          $('#progress-bar').val((player.getCurrentTime() / player.getDuration()) * 100);
+      }      
+
+
+      // Playback
+
+      $('#play').on('click', function () {
+          player.playVideo();
+      });
+
+
+      $('#pause').on('click', function () {
+          player.pauseVideo();
+      });
+
+
       function PageTitle(song) {
 
         document.title = song
@@ -54,19 +129,21 @@ $(document).ready(function(){
             // 3. This function creates an <iframe> (and YouTube player)
             //    after the API code downloads.
             var player;
+            time_update_interval = 0;
             function onYouTubePlayer(id) {
               player = new YT.Player('player', {
                 height: '24px',
                 width: '550',
                 videoId: '<%= video_id(@song)%>',
                 playerVars: { 'autoplay': 1, 
-                              'controls': 1 , 
+                              'controls': 0 , 
                               'autohide': 1,
 
                                },
 
                 events: {
                   'onReady': onPlayerReady,
+                  'onReady': initialize,
                   'onStateChange': onPlayerStateChange,
                   'onError': onError
 
@@ -82,6 +159,18 @@ $(document).ready(function(){
   </div>
 </div>
 <div class="control-panel">
+  <p>
+    <span id="current-time"></span>/
+    <span id="duration"></span>
+  </p>       
+    <p>
+      <span id="play" class="glyphicon glyphicon-play"></span>
+      <span id="pause" class="glyphicon glyphicon-stop"></span></p>    
+    </p>
+  
+
+  <input type="range" id="progress-bar" value="0">
+
   <a class="btn btn-primary" href="<%= spotify_link(@song) %>">Play on Spotify </a> 
   <button type="button" class="btn btn-primary" data-toggle="popover"> Album info </button>
 </div>
