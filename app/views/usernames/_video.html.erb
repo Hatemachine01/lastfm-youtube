@@ -35,7 +35,7 @@ $(document).ready(function(){
             window.onYouTubePlayerAPIReady = function(id) {
               onYouTubePlayer(id);
               PageTitle(song);
-
+               time_update_interval = 0;
             };
 
 
@@ -129,7 +129,6 @@ $(document).ready(function(){
             // 3. This function creates an <iframe> (and YouTube player)
             //    after the API code downloads.
             var player;
-            time_update_interval = 0;
             function onYouTubePlayer(id) {
               player = new YT.Player('player', {
                 height: '24px',
