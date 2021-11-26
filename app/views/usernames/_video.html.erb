@@ -168,7 +168,7 @@ $(document).ready(function(){
     <p>
       <span id="play"><i class="fa fa-play"></i></span>
       <span id="pause"><i class="fa fa-stop"></i></span>
-      <span><%= link_to "", shuttle_path(:username => @user, :current_song => @song) , remote:true  %><i class="fa fa-random"></i> </span>
+      <span><%= link_to "", shuttle_path(:username => @user, :current_song => @song) , class: "fa fa-random text-black" , remote:true  %></span>
 
             
     </p>
