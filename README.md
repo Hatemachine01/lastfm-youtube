@@ -1,6 +1,6 @@
 # LastFM - Youtube Player
 
-Web app to play Youtube videos of your lastfm's favorited tracks. The app utilizes LastFM's, Youtube and Spotify's API to provide the user with videos of their library.
+Web app to play Youtube videos of your lastfm's favorited tracks. The app utilizes LastFM's, Youtube and the Spotify's API to provide the user with videos of their library as well as album information.
 
 
 
@@ -26,7 +26,7 @@ Ruby Gems :
 -  Newrelic_rpm
 -  Rspotify
 -  Popper_js
--  figaro
+-  Figaro
 
 
 ##### Prerequisites
@@ -34,8 +34,8 @@ Ruby Gems :
 The setups steps expect following tools installed on the system.
 
 - Github
-- Ruby [2.4.0]
-- Rails [5.0.2]
+- Ruby [2.7.1]
+- Rails [5.1.4]
 
 ##### 1. Check out the repository
 
