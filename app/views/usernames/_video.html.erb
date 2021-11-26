@@ -17,11 +17,13 @@ $(document).ready(function(){
 
 <div class="embed-responsive embed-responsive-4by3">
   <div class="embed-responsive-item" id="player">
+
           
           <script type="text/javascript">
            $(document).ready(function() {
             function loadPlayer(id, user_id, song, spotify_link) { 
-                     
+
+                  
           UserId = user_id
 
           if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
@@ -55,6 +57,7 @@ $(document).ready(function(){
     // Update the controls on load
     updateTimerDisplay();
     updateProgressBar();
+    player.playVideo();
 
 
     // Clear any old interval.
@@ -163,20 +166,23 @@ $(document).ready(function(){
     <span id="duration"></span>
   </p>       
     <p>
-      <span id="play" class="glyphicon glyphicon-play"></span>
-      <span id="pause" class="glyphicon glyphicon-stop"></span></p>    
+      <span id="play"><i class="fa fa-play"></i></span>
+      <span id="pause"><i class="fa fa-stop"></i></span>
+      <span><%= link_to "", shuttle_path(:username => @user, :current_song => @song) , remote:true  %><i class="fa fa-random"></i> </span>
+
+            
     </p>
   
 
   <input type="range" id="progress-bar" value="0">
 
-  <a class="btn btn-primary" href="<%= spotify_link(@song) %>">Play on Spotify </a> 
-  <button type="button" class="btn btn-primary" data-toggle="popover"> Album info </button>
+  <a class="btn btn-primary" href="<%= spotify_link(@song) %>">Play on Spotify <i class="fa fa-spotify"></i></a> 
+  <button type="button" class="btn btn-primary" data-toggle="popover"> Album info <i class="fa fa-info-circle"></i> </button>
 </div>
  
+ <!-- 
+      <%= link_to "Switch Username", new_username_path , :class => "btn btn-primary back-button", :id => 'Another search' %>  -->
  
-      <%= link_to "Switch Username", new_username_path , :class => "btn btn-primary back-button", :id => 'Another search' %> 
-      <%= link_to "Shuffle", shuttle_path(:username => @user, :current_song => @song) , remote:true , :class => "btn btn-primary shuffle" %> 
 </div>  	
 
 
