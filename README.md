@@ -15,18 +15,18 @@ Technologies:
 Ruby Gems :
 
 
-- gem 'nokogiri'
-- gem 'kaminari', '~> 1.1', '>= 1.1.1'
-- gem 'selenium-webdriver'
-- gem 'geckodriver-helper'
-- gem "gritter", "1.2.0"
-- gem 'social-share-button'
-- gem "font-awesome-rails"
-- gem 'rubocop', '~> 0.54.0', require: false
-- gem 'newrelic_rpm'
-- gem 'rspotify'
-- gem 'popper_js', '~> 1.14.5'
-- gem 'figaro'
+-  Nokogiri
+-  Kaminari
+-  Selenium-webdriver
+-  Geckodriver-helper
+-  Gritter"
+-  Social-share-button
+-  font-awesome-rails
+-  Rubocop
+-  Newrelic_rpm
+-  Rspotify
+-  Popper_js
+-  figaro
 
 
 ##### Prerequisites
