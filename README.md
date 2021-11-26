@@ -1,6 +1,6 @@
 # LastFM - Youtube Player
 
-Web app to play Youtube videos of your lastfm's favorited tracks. The app utilizes LastFM's, Youtube and the Spotify's API to provide the user with videos of their library as well as album information.
+Web app to play Youtube videos of your lastfm's favorited tracks. The app utilizes LastFM's, Youtube and the Spotify's API to provide the user with videos of from their library as well as album information.
 
 
 
@@ -19,7 +19,7 @@ Ruby Gems :
 -  Kaminari
 -  Selenium-webdriver
 -  Geckodriver-helper
--  Gritter"
+-  Gritter
 -  Social-share-button
 -  font-awesome-rails
 -  Rubocop
