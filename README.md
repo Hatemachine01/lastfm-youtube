@@ -14,20 +14,19 @@ Technologies:
 
 Ruby Gems :
 
-gem 'bootstrap-sass'
-gem 'jquery-rails'
-gem 'nokogiri'
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
-gem 'selenium-webdriver'
-gem 'geckodriver-helper'
-gem "gritter", "1.2.0"
-gem 'social-share-button'
-gem "font-awesome-rails"
-gem 'rubocop', '~> 0.54.0', require: false
-gem 'newrelic_rpm'
-gem 'rspotify'
-gem 'popper_js', '~> 1.14.5'
-gem 'figaro'
+
+- gem 'nokogiri'
+- gem 'kaminari', '~> 1.1', '>= 1.1.1'
+- gem 'selenium-webdriver'
+- gem 'geckodriver-helper'
+- gem "gritter", "1.2.0"
+- gem 'social-share-button'
+- gem "font-awesome-rails"
+- gem 'rubocop', '~> 0.54.0', require: false
+- gem 'newrelic_rpm'
+- gem 'rspotify'
+- gem 'popper_js', '~> 1.14.5'
+- gem 'figaro'
 
 
 ##### Prerequisites
