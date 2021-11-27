@@ -1,6 +1,6 @@
 # LastFM - Youtube Player
 
-Web app to play Youtube videos of your LastFM's favorited tracks. The app utilizes LastFM's API to get your favorited tracks and then  scrapes Youtube for their respective music videos using [Scrape YouTube searches (API)](https://github.com/HermanFassett/youtube-scrape). The Spotify's API is also integrated to provide  album information.
+Web app to play Youtube videos of your LastFM's favorited tracks. The app utilizes LastFM's API to get your favorited tracks and then  scrapes Youtube for their respective music videos using [Scrape YouTube searches (API)](https://github.com/HermanFassett/youtube-scrape). The Spotify's API is also integrated to provide  song information.
 
 
 
